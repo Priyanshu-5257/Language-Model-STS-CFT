@@ -1,40 +1,3 @@
-# Training
-
-## How to Train
-
-1. Clone MiniCPM huggingface project to `$PROJ_DIR/pretrained`
-
-```bash
-git clone https://huggingface.co/openbmb/MiniCPM-2B-dpo-bf16
-```
-2. Change a tokenizer setting in `tokenizer_config.json`
-
-```json
-"add_eos_token": true
-```
-
-3. Create a `output` folder inside `$PROJ_DIR/train` folder to save a model checkpoint
-
-```bash
-mkdir $PROJ_DIR/train/output
-```
-
-4. Make sure you have installed conda environment
-
-```bash
-conda env create --file=environment.yml
-conda activate dr
-```
-
-5. Configure the number of GPUs in your system in `$PROJ_DIR/train/configs/ddp_config.yaml` at the `num_processes` field
-
-6. Run train script
-
-```bash
-chmod +x train.sh
-./train.sh
-```
-
 ## Applied Techniques
 
 The following training techniques are applied.
@@ -42,5 +5,4 @@ The following training techniques are applied.
 1. LoRA : rank 8
 2. Mixed Precision Training : bf16
 3. Learning Rate Scheduler : CosineAnnealingLR with Warmup
-4. Data Distributed Parallel (DDP)
-5. Efficiently calculate global loss by doing `all_gather` from all GPUs
+4. Grokking with EMA algorithm
