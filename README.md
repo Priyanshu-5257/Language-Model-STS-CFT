@@ -7,7 +7,7 @@ $$\min  - \log \frac{e^{\text{sim}(\textbf{h}_i, \textbf{h}_i^+) / \tau}}{\sum_i
 where $\textbf{h}_i$ denotes an embedding vector of a premise $x_i$, $\tau$ denotes a temperature and $\text{sim}(\textbf{h}_i, \textbf{h}_i^+)$ computes the cosine similarity between embedding vectors $\textbf{h}_i$ and $\textbf{h}_i^+$.
 
 We employ LoRA as our parameter-efficient fine-tuning technique in order to reduce the memory requirement.
-This Repository is forked from [Language-Model-STS-CFT](https://github.com/trapoom555/Language-Model-STS-CFT) and modified to run on single gpu node. Optimised with grokking using exponential moving average algorithm ([paper](https://arxiv.org/pdf/2405.20233)) for faster model generalisation.
+This Repository is forked from [Language-Model-STS-CFT](https://github.com/trapoom555/Language-Model-STS-CFT) and modified to run on single gpu node. Optimised with accelerating grokking using exponential moving average algorithm ([paper](https://arxiv.org/pdf/2405.20233)) for faster model generalisation.
 
 ## Embedding Extraction
 
